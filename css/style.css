@@ -1,0 +1,1041 @@
+/* ========================================
+   BAGIAN 1: GIFT BOX SECTION & SHOOTING STARS
+   ======================================== */
+
+#gift-box-section {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: "Anton", sans-serif;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gift-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.night {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(45deg);
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Shooting Star Styles */
+.shooting_star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 3000ms ease-in-out infinite,
+    shooting 3000ms ease-in-out infinite;
+}
+
+.shooting_star::before,
+.shooting_star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 255, 0),
+    #5f91ff,
+    rgba(0, 0, 255, 0)
+  );
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  animation: shining 3000ms ease-in-out infinite;
+}
+
+.shooting_star::after {
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+/* Individual shooting star delays */
+.shooting_star:nth-child(1) {
+  top: calc(50% - -149px);
+  left: calc(50% - 286px);
+  animation-delay: 9871ms;
+}
+.shooting_star:nth-child(1)::before,
+.shooting_star:nth-child(1)::after {
+  animation-delay: 9871ms;
+}
+.shooting_star:nth-child(2) {
+  top: calc(50% - 197px);
+  left: calc(50% - 33px);
+  animation-delay: 9633ms;
+}
+.shooting_star:nth-child(2)::before,
+.shooting_star:nth-child(2)::after {
+  animation-delay: 9633ms;
+}
+.shooting_star:nth-child(3) {
+  top: calc(50% - -126px);
+  left: calc(50% - 44px);
+  animation-delay: 1100ms;
+}
+.shooting_star:nth-child(3)::before,
+.shooting_star:nth-child(3)::after {
+  animation-delay: 1100ms;
+}
+.shooting_star:nth-child(4) {
+  top: calc(50% - 120px);
+  left: calc(50% - 206px);
+  animation-delay: 491ms;
+}
+.shooting_star:nth-child(4)::before,
+.shooting_star:nth-child(4)::after {
+  animation-delay: 491ms;
+}
+.shooting_star:nth-child(5) {
+  top: calc(50% - -51px);
+  left: calc(50% - 139px);
+  animation-delay: 3383ms;
+}
+.shooting_star:nth-child(5)::before,
+.shooting_star:nth-child(5)::after {
+  animation-delay: 3383ms;
+}
+.shooting_star:nth-child(6) {
+  top: calc(50% - -163px);
+  left: calc(50% - 105px);
+  animation-delay: 4467ms;
+}
+.shooting_star:nth-child(6)::before,
+.shooting_star:nth-child(6)::after {
+  animation-delay: 4467ms;
+}
+.shooting_star:nth-child(7) {
+  top: calc(50% - 90px);
+  left: calc(50% - 284px);
+  animation-delay: 5832ms;
+}
+.shooting_star:nth-child(7)::before,
+.shooting_star:nth-child(7)::after {
+  animation-delay: 5832ms;
+}
+.shooting_star:nth-child(8) {
+  top: calc(50% - -102px);
+  left: calc(50% - 295px);
+  animation-delay: 9046ms;
+}
+.shooting_star:nth-child(8)::before,
+.shooting_star:nth-child(8)::after {
+  animation-delay: 9046ms;
+}
+.shooting_star:nth-child(9) {
+  top: calc(50% - 184px);
+  left: calc(50% - 121px);
+  animation-delay: 513ms;
+}
+.shooting_star:nth-child(9)::before,
+.shooting_star:nth-child(9)::after {
+  animation-delay: 513ms;
+}
+.shooting_star:nth-child(10) {
+  top: calc(50% - 133px);
+  left: calc(50% - 26px);
+  animation-delay: 7534ms;
+}
+.shooting_star:nth-child(10)::before,
+.shooting_star:nth-child(10)::after {
+  animation-delay: 7534ms;
+}
+.shooting_star:nth-child(11) {
+  top: calc(50% - -74px);
+  left: calc(50% - 242px);
+  animation-delay: 5191ms;
+}
+.shooting_star:nth-child(11)::before,
+.shooting_star:nth-child(11)::after {
+  animation-delay: 5191ms;
+}
+.shooting_star:nth-child(12) {
+  top: calc(50% - -44px);
+  left: calc(50% - 35px);
+  animation-delay: 3530ms;
+}
+.shooting_star:nth-child(12)::before,
+.shooting_star:nth-child(12)::after {
+  animation-delay: 3530ms;
+}
+.shooting_star:nth-child(13) {
+  top: calc(50% - 173px);
+  left: calc(50% - 59px);
+  animation-delay: 4041ms;
+}
+.shooting_star:nth-child(13)::before,
+.shooting_star:nth-child(13)::after {
+  animation-delay: 4041ms;
+}
+.shooting_star:nth-child(14) {
+  top: calc(50% - -118px);
+  left: calc(50% - 245px);
+  animation-delay: 7443ms;
+}
+.shooting_star:nth-child(14)::before,
+.shooting_star:nth-child(14)::after {
+  animation-delay: 7443ms;
+}
+.shooting_star:nth-child(15) {
+  top: calc(50% - 168px);
+  left: calc(50% - 22px);
+  animation-delay: 159ms;
+}
+.shooting_star:nth-child(15)::before,
+.shooting_star:nth-child(15)::after {
+  animation-delay: 159ms;
+}
+.shooting_star:nth-child(16) {
+  top: calc(50% - 61px);
+  left: calc(50% - 170px);
+  animation-delay: 9359ms;
+}
+.shooting_star:nth-child(16)::before,
+.shooting_star:nth-child(16)::after {
+  animation-delay: 9359ms;
+}
+.shooting_star:nth-child(17) {
+  top: calc(50% - -55px);
+  left: calc(50% - 58px);
+  animation-delay: 7741ms;
+}
+.shooting_star:nth-child(17)::before,
+.shooting_star:nth-child(17)::after {
+  animation-delay: 7741ms;
+}
+.shooting_star:nth-child(18) {
+  top: calc(50% - -19px);
+  left: calc(50% - 201px);
+  animation-delay: 7834ms;
+}
+.shooting_star:nth-child(18)::before,
+.shooting_star:nth-child(18)::after {
+  animation-delay: 7834ms;
+}
+.shooting_star:nth-child(19) {
+  top: calc(50% - -124px);
+  left: calc(50% - 115px);
+  animation-delay: 8908ms;
+}
+.shooting_star:nth-child(19)::before,
+.shooting_star:nth-child(19)::after {
+  animation-delay: 8908ms;
+}
+.shooting_star:nth-child(20) {
+  top: calc(50% - -106px);
+  left: calc(50% - 171px);
+  animation-delay: 3898ms;
+}
+.shooting_star:nth-child(20)::before,
+.shooting_star:nth-child(20)::after {
+  animation-delay: 3898ms;
+}
+
+/* Shooting star animations */
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes sky {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+/* ========================================
+   BAGIAN 2: CANVAS HATI (BACKGROUND)
+   ======================================== */
+
+#testCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: -1;
+  display: none;
+}
+
+/* ========================================
+   BAGIAN 3: BASE STYLES & GIFT MESSAGE
+   ======================================== */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  color: #333;
+  min-height: 100vh;
+}
+
+.gift-message {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2em;
+  color: #ffffff;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+.small-text {
+  font-size: 0.9em;
+  color: #bbbbbb;
+  margin-top: 20px;
+}
+
+.clickable-gift {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.clickable-gift:hover {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   BAGIAN 4: COUPONS SECTION
+   ======================================== */
+
+#coupons-section {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+}
+
+.main-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.coupons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Coupon Card Styles */
+.coupon-card {
+  background-color: #fefefe;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.coupon-card:hover {
+  transform: translateY(-5px);
+}
+
+.coupon-letter-special {
+  grid-column: 1 / -1;
+  background-color: #fff8f9;
+  border-color: #f48fb1;
+  border-width: 2px;
+}
+
+.coupon-letter-special:hover {
+  background-color: #fce4ec;
+  transform: translateY(-5px);
+}
+
+.coupon-letter-special .coupon-header {
+  color: #d81b60;
+}
+
+.coupon-content {
+  flex-grow: 1;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 2px dashed #eee;
+}
+
+.coupon-header {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  color: #333;
+}
+
+.coupon-detail {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1em;
+  color: #666;
+  margin: 5px 0;
+  text-transform: lowercase;
+}
+
+.coupon-tear {
+  background-color: #eee;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coupon-tear::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 10px;
+  background: radial-gradient(circle at 0 50%, transparent 5px, #fefefe 5px)
+    repeat-y;
+  background-size: 100% 20px;
+  left: -75%;
+  top: 0;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.coupon-tear-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+/* ========================================
+   BAGIAN 5: MODAL STYLES
+   ======================================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#letter-modal,
+#gift-modal {
+  background-color: rgba(27, 39, 53, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+/* Letter Modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px;
+  border: 3px solid #f48fb1;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 10px 40px rgba(244, 143, 177, 0.4),
+    0 0 20px rgba(244, 143, 177, 0.2);
+  animation: pulseGlow 4s ease-in-out infinite;
+  text-align: center;
+}
+
+/* Heart decorations */
+.modal-content::before {
+  content: "♥";
+  position: absolute;
+  font-size: 350px;
+  font-weight: 900;
+  color: #ffe0e6;
+  z-index: -1;
+  line-height: 1;
+  opacity: 0.5;
+  top: -80px;
+  left: -80px;
+  transform: rotate(-25deg);
+  animation: floatHeartBefore 8s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(244, 143, 177, 0.3);
+}
+
+.modal-content::after {
+  content: "♥";
+  position: absolute;
+  font-size: 320px;
+  font-weight: 900;
+  color: #ffe0e6;
+  z-index: -1;
+  line-height: 1;
+  opacity: 0.5;
+  bottom: -70px;
+  right: -70px;
+  transform: rotate(45deg);
+  animation: floatHeartAfter 8s ease-in-out infinite;
+  animation-delay: -4s;
+  text-shadow: 0 0 30px rgba(244, 143, 177, 0.3);
+}
+
+.kiss-mark {
+  position: absolute;
+  z-index: -1;
+  font-size: 220px;
+  color: #ffd4dc;
+  top: 80px;
+  right: 20px;
+  opacity: 0.6;
+  animation: pulseKiss 7s ease-in-out infinite;
+  animation-delay: -3s;
+  filter: drop-shadow(0 0 20px rgba(244, 143, 177, 0.3));
+}
+
+.modal-content h2::before {
+  content: "💕";
+  position: absolute;
+  font-size: 120px;
+  left: -30px;
+  top: 180px;
+  opacity: 0.4;
+  z-index: -1;
+  animation: floatSide 6s ease-in-out infinite;
+}
+
+.modal-content h2::after {
+  content: "💖";
+  position: absolute;
+  font-size: 100px;
+  right: -20px;
+  bottom: 100px;
+  opacity: 0.4;
+  z-index: -1;
+  animation: floatSide 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+/* Sparkles on signature */
+.signature::before {
+  content: "✨";
+  margin-right: 10px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.signature::after {
+  content: "✨";
+  margin-left: 10px;
+  animation: sparkle 2s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.modal-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2em;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.signature {
+  font-family: "Caveat", cursive;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Gift Modal (GIF) */
+.clickable-coupon {
+  cursor: pointer;
+}
+
+.modal-content-gift {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+#gift-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.close-button-gift {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-button-gift:hover,
+.close-button-gift:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+/* ========================================
+   BAGIAN 6: BUTTON STYLES
+   ======================================== */
+
+.final-surprise-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #d81b60;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.final-surprise-button:hover {
+  background-color: #c2185b;
+  transform: scale(1.05);
+}
+
+/* ========================================
+   BAGIAN 7: MODAL ANIMATIONS
+   ======================================== */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 10px 40px rgba(244, 143, 177, 0.4),
+      0 0 20px rgba(244, 143, 177, 0.2);
+  }
+  50% {
+    box-shadow: 0 10px 50px rgba(244, 143, 177, 0.6),
+      0 0 40px rgba(244, 143, 177, 0.5);
+  }
+  100% {
+    box-shadow: 0 10px 40px rgba(244, 143, 177, 0.4),
+      0 0 20px rgba(244, 143, 177, 0.2);
+  }
+}
+
+@keyframes floatHeartBefore {
+  0% {
+    transform: translateY(0px) rotate(-25deg) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-30px) rotate(-20deg) scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0px) rotate(-25deg) scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatHeartAfter {
+  0% {
+    transform: translateY(0px) rotate(45deg) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-30px) rotate(50deg) scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg) scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulseKiss {
+  0% {
+    opacity: 0.6;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: rotate(5deg) scale(1.08);
+  }
+  100% {
+    opacity: 0.6;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes floatSide {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(-15px) translateY(-15px) rotate(10deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+}
+
+/* ========================================
+   BAGIAN 8: RESPONSIVE - TABLET
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .coupons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .coupon-letter-special {
+    grid-column: 1 / -1;
+  }
+
+  .main-title {
+    font-size: 2.2em;
+  }
+
+  .coupon-header {
+    font-size: 2.2em;
+  }
+}
+
+/* ========================================
+   BAGIAN 9: RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Gift Box Section */
+  .gift-message {
+    font-size: 1.5em;
+    padding: 0 15px;
+  }
+
+  .clickable-gift {
+    width: 150px;
+  }
+
+  .small-text {
+    font-size: 0.85em;
+  }
+
+  .shooting_star:nth-child(n + 11) {
+    display: none;
+  }
+
+  /* Coupons Section */
+  .main-title {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .coupons-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .coupon-card {
+    flex-direction: column;
+  }
+
+  .coupon-letter-special {
+    grid-column: auto;
+  }
+
+  .coupon-content {
+    border-right: none;
+    border-bottom: 2px dashed #eee;
+    padding: 20px;
+  }
+
+  .coupon-header {
+    font-size: 2em;
+  }
+
+  .coupon-detail {
+    font-size: 1em;
+  }
+
+  .coupon-tear {
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    border-top: 2px dashed #eee;
+  }
+
+  .coupon-tear-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 0 10px;
+  }
+
+  .coupon-tear::before {
+    content: none;
+  }
+
+  /* Modal Letter */
+  .modal-content {
+    width: 90%;
+    max-width: 90%;
+    padding: 25px 20px;
+    margin: 20px;
+    border-width: 2px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5em;
+  }
+
+  .modal-content p {
+    font-size: 1em;
+  }
+
+  .modal-content::before {
+    font-size: 200px;
+    top: -50px;
+    left: -50px;
+  }
+
+  .modal-content::after {
+    font-size: 180px;
+    bottom: -40px;
+    right: -40px;
+  }
+
+  .kiss-mark {
+    font-size: 140px;
+    top: 60px;
+    right: 0px;
+  }
+
+  .modal-content h2::before {
+    font-size: 80px;
+    left: -20px;
+    top: 140px;
+  }
+
+  .modal-content h2::after {
+    font-size: 70px;
+    right: -10px;
+    bottom: 80px;
+  }
+
+  .close-button {
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+  }
+
+  /* Modal Gift */
+  .modal-content-gift {
+    width: 90%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .close-button-gift {
+    top: 5px;
+    right: 15px;
+    font-size: 24px;
+  }
+
+  /* Button */
+  .final-surprise-button {
+    font-size: 0.85em;
+    padding: 10px 18px;
+  }
+
+  /* Mobile animation optimization */
+  .shooting_star {
+    animation-duration: 4000ms;
+  }
+}
+
+/* ========================================
+   BAGIAN 10: RESPONSIVE - SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .gift-message {
+    font-size: 1.3em;
+  }
+
+  .clickable-gift {
+    width: 120px;
+  }
+
+  .main-title {
+    font-size: 1.5em;
+  }
+
+  .coupon-header {
+    font-size: 1.8em;
+  }
+
+  .coupon-detail {
+    font-size: 0.95em;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3em;
+  }
+
+  .modal-content p {
+    font-size: 0.95em;
+  }
+
+  .modal-content::before {
+    font-size: 150px;
+    top: -30px;
+    left: -30px;
+  }
+
+  .modal-content::after {
+    font-size: 130px;
+    bottom: -30px;
+    right: -30px;
+  }
+
+  .kiss-mark {
+    font-size: 100px;
+    top: 50px;
+    right: -10px;
+  }
+
+  .modal-content h2::before {
+    font-size: 60px;
+    left: -15px;
+    top: 120px;
+  }
+
+  .modal-content h2::after {
+    font-size: 50px;
+    right: -5px;
+    bottom: 60px;
+  }
+
+  .final-surprise-button {
+    font-size: 0.8em;
+    padding: 10px 15px;
+  }
+}
+
+/* Accessibility - Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .shooting_star,
+  .modal-content::before,
+  .modal-content::after,
+  .kiss-mark {
+    animation: none;
+  }
+}

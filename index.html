@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Happy Birthday Fitri Elsya Ramadhani" />
+    <title>Happy Birthday! ❤️</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Preconnect untuk performa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+
+    <!-- CreateJS Library -->
+    <link
+      rel="preload"
+      href="https://code.createjs.com/1.0.0/easeljs.min.js"
+      as="script"
+    />
+    <script src="https://code.createjs.com/1.0.0/easeljs.min.js" defer></script>
+  </head>
+  <body>
+    <!-- Canvas untuk animasi hati -->
+    <canvas id="testCanvas"></canvas>
+
+    <!-- Audio background -->
+    <audio id="backgroundMusic" loop preload="none">
+      <source src="audio/Hozier - Like Real People Do.wav" type="audio/wav" />
+      Browser Anda tidak mendukung tag audio.
+    </audio>
+
+    <!-- Section 1: Gift Box dengan Shooting Stars -->
+    <div id="gift-box-section" class="center-content">
+      <!-- Background shooting stars -->
+      <div class="night">
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+      </div>
+
+      <!-- Gift box content -->
+      <div class="gift-content">
+        <h1 class="gift-message">Klik untuk membuka kejutan spesial!</h1>
+        <img
+          src="images/gift-icon.png"
+          alt="Gift Box"
+          id="gift-icon"
+          class="clickable-gift"
+          width="200"
+          height="200"
+        />
+        <p class="small-text">Untukmu, Fitri Elsya Ramadhani</p>
+      </div>
+    </div>
+
+    <!-- Section 2: Coupons -->
+    <div id="coupons-section" style="display: none">
+      <h1 class="main-title">My Special Coupons for You!</h1>
+      <div class="coupons-grid">
+        <!-- Coupon 1: Free Kisses -->
+        <div
+          class="coupon-card clickable-coupon"
+          data-gif-src="https://media1.tenor.com/m/wXfUjrXrdY4AAAAC/h%C3%B4n.gif"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">free kisses</p>
+            <p class="coupon-detail">uses: unlimited</p>
+            <p class="coupon-detail">expires: never</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">KEEP THIS COUPON</p>
+          </div>
+        </div>
+
+        <!-- Coupon 2: Free Hug -->
+        <div
+          class="coupon-card clickable-coupon"
+          data-gif-src="https://media1.tenor.com/m/QdSOnx-n-aIAAAAC/love-you-forever.gif"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">free hug</p>
+            <p class="coupon-detail">uses: unlimited</p>
+            <p class="coupon-detail">expires: never</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">KEEP THIS COUPON</p>
+          </div>
+        </div>
+
+        <!-- Coupon 3: Free Movie Date -->
+        <div
+          class="coupon-card clickable-coupon"
+          data-gif-src="https://media1.tenor.com/m/prA9djBAZbAAAAAC/popcorn-goma-eating.gif"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">free movie date</p>
+            <p class="coupon-detail">uses: while i'm in Bekasi</p>
+            <p class="coupon-detail">expires: as long as i have money</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">KEEP THIS COUPON</p>
+          </div>
+        </div>
+
+        <!-- Coupon 4: Special Letter (Full Width) -->
+        <div
+          class="coupon-card coupon-letter-special"
+          id="special-letter-coupon"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">A Very Special Letter</p>
+            <p class="coupon-detail">Just for you, from my heart</p>
+            <p class="coupon-detail">expires: never</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">CLICK TO READ</p>
+          </div>
+        </div>
+
+        <!-- Coupon 5: Free Pat Pat -->
+        <div
+          class="coupon-card clickable-coupon"
+          data-gif-src="https://media.tenor.com/Bw2OqaP5dHUAAAAi/peachcat-and-goma-peachcat.gif"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">free pat pat</p>
+            <p class="coupon-detail">uses: unlimited</p>
+            <p class="coupon-detail">expires: never</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">KEEP THIS COUPON</p>
+          </div>
+        </div>
+
+        <!-- Coupon 6: One Request -->
+        <div
+          class="coupon-card clickable-coupon"
+          data-gif-src="https://media.tenor.com/BJAv5IPScEgAAAAi/peach-goma.gif"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">one request</p>
+            <p class="coupon-detail">(anything)</p>
+            <p class="coupon-detail">uses: 1</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">KEEP THIS COUPON</p>
+          </div>
+        </div>
+
+        <!-- Coupon 7: Free Call -->
+        <div
+          class="coupon-card clickable-coupon"
+          data-gif-src="https://media1.tenor.com/m/n37CFQmkrzkAAAAC/peach-and-goma-peach.gif"
+        >
+          <div class="coupon-content">
+            <p class="coupon-header">free call</p>
+            <p class="coupon-detail">uses: unlimited</p>
+            <p class="coupon-detail">expires: never</p>
+          </div>
+          <div class="coupon-tear">
+            <p class="coupon-tear-text">KEEP THIS COUPON</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Letter -->
+    <div id="letter-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div class="kiss-mark">💋</div>
+        <h2>My Dearest Fitri Elsya Ramadhani,</h2>
+        <p>
+          “Thank you for all the wonderful moments you’ve brought into my life —
+          every smile, every memory, every little thing that made my world
+          brighter because of you. Having the love we share is truly the most
+          precious gift in life, and I feel so lucky and blessed to have you by
+          my side. On your special day, I send you all my love today, tomorrow,
+          and always. Happy birthday, my dear — I hope you’ll always be the best
+          version of yourself, just like the way you’ve always been to me.
+        </p>
+        <p>Aku sayang kamu banyak-banyak! ❤️</p>
+        <p class="signature">- Jeh</p>
+
+        <button
+          type="button"
+          id="show-gallery-button"
+          class="final-surprise-button"
+        >
+          ...ada satu kejutan terakhir...
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal: GIF Gift -->
+    <div id="gift-modal" class="modal">
+      <div class="modal-content-gift">
+        <span class="close-button-gift">&times;</span>
+        <img src="" alt="Your Gift" id="gift-image" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Section 3: Gallery (Constellation Theme) -->
+    <div id="gallery-section" style="display: none">
+      <h1 class="gallery-title">
+        Your cute and charming photos are like the brightest stars — even just a
+        few, yet they shine with all the memories we shared.
+      </h1>
+
+      <div class="galaxy-container">
+        <!-- Memory Stars (46 photos) -->
+        <div class="memory-star">
+          <img data-src="images/10.jpg" alt="Kenangan 1" loading="lazy" />
+          <div class="caption">Kita mulai dari senyum favoritku ❤️</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/9.jpg" alt="Kenangan 2" loading="lazy" />
+          <div class="caption">Cantik banget!</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/5.jpg" alt="Kenangan 3" loading="lazy" />
+          <div class="caption">Selalu cocok pake kacamata</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/8.jpg" alt="Kenangan 4" loading="lazy" />
+          <div class="caption">Mode manyun andalan kamu 😗</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/7.jpg" alt="Kenangan 5" loading="lazy" />
+          <div class="caption">Mode jail! Wlee 😜</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/6.jpg" alt="Kenangan 6" loading="lazy" />
+          <div class="caption">Cantik part 2</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/2.jpg" alt="Kenangan 7" loading="lazy" />
+          <div class="caption">Foto sama anin pake hp aku</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/4.jpg" alt="Kenangan 8" loading="lazy" />
+          <div class="caption">THE manyun.</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/1.jpg" alt="Kenangan 9" loading="lazy" />
+          <div class="caption">Manyun lagi,</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/3.jpg" alt="Kenangan 10" loading="lazy" />
+          <div class="caption">Foto pas era maskeran cantik banget</div>
+        </div>
+
+        <div class="memory-star">
+          <img data-src="images/12.jpg" alt="Kenangan 11" loading="lazy" />
+          <div class="caption">Selalu cantik, apalagi pas di kamar</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/11.jpg" alt="Kenangan 12" loading="lazy" />
+          <div class="caption">kaget! atau pamer cincin? 😜</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/13.jpg" alt="Kenangan 13" loading="lazy" />
+          <div class="caption">Vibes-nya dapet banget yang ini</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/16.jpg" alt="Kenangan 14" loading="lazy" />
+          <div class="caption">Manyun (level 1)</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/17.jpg" alt="Kenangan 15" loading="lazy" />
+          <div class="caption">Manyun (level 2)</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/15.jpg" alt="Kenangan 16" loading="lazy" />
+          <div class="caption">Are u okay?</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/14.jpg" alt="Kenangan 17" loading="lazy" />
+          <div class="caption">Manyun di luar malem-malem</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/18.jpg" alt="Kenangan 18" loading="lazy" />
+          <div class="caption">Manyun (level 3)</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/19.jpg" alt="Kenangan 19" loading="lazy" />
+          <div class="caption">DAN INI RATUNYA MANYUN! 🤣</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/20.jpg" alt="Kenangan 20" loading="lazy" />
+          <div class="caption">Suka banget rambutmu di sini ✨</div>
+        </div>
+
+        <div class="memory-star">
+          <img data-src="images/23.jpg" alt="Kenangan 21" loading="lazy" />
+          <div class="caption">Mirror selfie aesthetic ✨</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/24.jpg" alt="Kenangan 22" loading="lazy" />
+          <div class="caption">Ini yang versi lebih jelas hehe</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/26.jpg" alt="Kenangan 23" loading="lazy" />
+          <div class="caption">keren banget!</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/25.jpg" alt="Kenangan 24" loading="lazy" />
+          <div class="caption">Abis liatin siapa mimisan?</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/21.jpg" alt="Kenangan 25" loading="lazy" />
+          <div class="caption">pose mikir... mikirin aku?</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/28.jpg" alt="Kenangan 26" loading="lazy" />
+          <div class="caption">Cantik!</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/29.jpg" alt="Kenangan 27" loading="lazy" />
+          <div class="caption">Senyum-senyum gemes</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/27.jpg" alt="Kenangan 28" loading="lazy" />
+          <div class="caption">Versi melet 😛</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/30.jpg" alt="Kenangan 29" loading="lazy" />
+          <div class="caption">Dan... ditutup sama manyun lagi dong 😗</div>
+        </div>
+
+        <div class="memory-star">
+          <img data-src="images/34.jpg" alt="Kenangan 30" loading="lazy" />
+          <div class="caption">Bukankah ini my... ✨</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/31.jpg" alt="Kenangan 31" loading="lazy" />
+          <div class="caption">Lucu kan</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/37.jpg" alt="Kenangan 32" loading="lazy" />
+          <div class="caption">Nemu aja fotonya</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/33.jpg" alt="Kenangan 33" loading="lazy" />
+          <div class="caption">Aku kacamata cocok juga yang</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/32.jpg" alt="Kenangan 34" loading="lazy" />
+          <div class="caption">Wlee 😜</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/35.jpg" alt="Kenangan 35" loading="lazy" />
+          <div class="caption">Koleksi melet 😜</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/36.jpg" alt="Kenangan 36" loading="lazy" />
+          <div class="caption">Lagi-lagi manyun wkwk</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/39.jpg" alt="Kenangan 37" loading="lazy" />
+          <div class="caption">Pose pusing pake jaket detektif 🕵️‍♀️</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/38.jpg" alt="Kenangan 38" loading="lazy" />
+          <div class="caption">Mau mam aku?</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/40.jpg" alt="Kenangan 39" loading="lazy" />
+          <div class="caption">Manis banget</div>
+        </div>
+
+        <div class="memory-star">
+          <img data-src="images/41.jpg" alt="Kenangan 40" loading="lazy" />
+          <div class="caption">Suka banget senyum manismu yang ini</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/44.jpg" alt="Kenangan 41" loading="lazy" />
+          <div class="caption">Pamer rambut tapi mukanya ditutup 😅</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/43.jpg" alt="Kenangan 42" loading="lazy" />
+          <div class="caption">Mode galau</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/45.jpg" alt="Kenangan 43" loading="lazy" />
+          <div class="caption">Lagi mikirin aku kan? Manyun part 200</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/46.jpg" alt="Kenangan 44" loading="lazy" />
+          <div class="caption">Labubu ta iki? 😬</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/42.jpg" alt="Kenangan 45" loading="lazy" />
+          <div class="caption">Dan manyun lagi...</div>
+        </div>
+        <div class="memory-star">
+          <img data-src="images/47.jpg" alt="Kenangan 46" loading="lazy" />
+          <div class="caption">Dan ini... *the final boss* manyun! 😗</div>
+        </div>
+      </div>
+
+      <!-- Gallery Footer -->
+      <h2 class="gallery-footer">
+        <svg
+          class="heart-drawing"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="heart-path"
+            d="M 50,30 
+                  C 30,10 10,20 10,40 
+                  C 10,70 50,90 50,90 
+                  C 50,90 90,70 90,40 
+                  C 90,20 70,10 50,30 z"
+          />
+        </svg>
+        We started as classmates, leveled up to being in the same circle, and
+        somehow ended up as two people who just can’t stop caring for each
+        other. Maybe I didn’t realize it before, but the more time we spent
+        together, the clearer it became — you’re not just someone to talk to,
+        you’re someone who feels like home. We’ve shared stories, laughter, and
+        even distance — yet my feelings only grew stronger. So on this level of
+        your birthday… I wanna upgrade us too. Fitri, will you take this next
+        step with me — be my girlfriend? Say yes, so I can finally rest easy
+        knowing I get to care for you, not just as a friend, but as someone who
+        truly loves you.
+      </h2>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
